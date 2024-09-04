@@ -4,18 +4,15 @@ from PIL import Image #Image Processing
 import numpy as np #Image Processing 
 
 #title
-st.title("Easy OCR - Extract Text from Images")
-
-#subtitle
-st.markdown("## Optical Character Recognition - Using `easyocr`, `streamlit`")
-
+st.title("test deploying models")
+st.markdown("## I use here `easyocr`, `streamlit`")
 st.markdown("")
 
 #image uploader
 image = st.file_uploader(label = "Upload your image here",type=['png','jpg','jpeg'])
 
 
-@st.cache
+@st.cache_resource
 def load_model(): 
     reader = ocr.Reader(['en'],model_storage_directory='.')
     return reader 
@@ -39,12 +36,11 @@ if image is not None:
             result_text.append(text[1])
 
         st.write(result_text)
-    #st.success("Here you go!")
-    st.balloons()
+    st.success("Here you go!")
+    # st.balloons()
 else:
     st.write("Upload an Image")
 
-st.caption("Made with ❤️ by @1littlecoder")
 
 
 
