@@ -1,3 +1,5 @@
+import os
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 import easyocr as ocr  #OCR
 import streamlit as st  #Web App
 from PIL import Image #Image Processing
